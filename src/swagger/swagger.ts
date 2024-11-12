@@ -14,7 +14,7 @@ const swaggerOptions: Options = {
       },
     ],
   },
-  apis: ["./src/routes/productRoutes.ts"],
+  apis: ["./src/routes/prendaRoutes.ts"],
 };
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);

@@ -1,39 +1,39 @@
 import { Router } from "express";
 import {
-  getAllProducts,
-  getProductById,
-  createProduct,
-  updateProduct,
-  deleteProduct,
-} from "../controllers/productControllers";
+  getAllPrendas,
+  getPrendaById,
+  createPrenda,
+  updatePrenda,
+  deletePrenda,
+} from "../controllers/prendaControllers";
 
-const productRoutes = Router();
+const prendaRoutes = Router();
 
 /**
  * @swagger
  * tags:
- *   name: Products
+ *   name: Prenda
  *   description: CRUD relacionado con productos
  */
 
 /**
  * @swagger
- * /api/products:
+ * /api/prenda:
  *   get:
  *     summary: Obtener todos los productos
- *     tags: [Products]
+ *     tags: [Prendas]
  *     responses:
  *       200:
  *         description: Lista de productos
  */
-productRoutes.get("/", getAllProducts);
+prendaRoutes.get("/", getAllPrendas);
 
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/prenda/{id}:
  *   get:
  *     summary: Obtener un producto por ID
- *     tags: [Products]
+ *     tags: [Prendas]
  *     parameters:
  *       - in: path
  *         name: id
@@ -47,14 +47,14 @@ productRoutes.get("/", getAllProducts);
  *       404:
  *         description: Producto no encontrado
  */
-productRoutes.get("/:id", getProductById);
+prendaRoutes.get("/:id", getPrendaById);
 
 /**
  * @swagger
- * /api/products:
+ * /api/prendas:
  *   post:
  *     summary: Crear un nuevo producto
- *     tags: [Products]
+ *     tags: [Prendas]
  *     requestBody:
  *       required: true
  *       content:
@@ -78,11 +78,11 @@ productRoutes.get("/:id", getProductById);
  *       500:
  *         description: Error en el servidor
  */
-productRoutes.post("/", createProduct);
+prendaRoutes.post("/", createPrenda);
 
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/prendas/{id}:
  *   put:
  *     summary: Actualizar un producto existente
  *     tags: [Products]
@@ -108,35 +108,35 @@ productRoutes.post("/", createProduct);
  *                 type: number
  *     responses:
  *       200:
- *         description: Producto actualizado
+ *         description: Prenda actualizado
  *       404:
- *         description: Producto no encontrado
+ *         description: Prenda no encontrado
  *       500:
  *         description: Error en el servidor
  */
-productRoutes.put("/:id", updateProduct);
+prendaRoutes.put("/:id", updatePrenda);
 
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/prendas/{id}:
  *   delete:
  *     summary: Eliminar un producto
- *     tags: [Products]
+ *     tags: [Prendas]
  *     parameters:
  *       - in: path
  *         name: id
  *         required: true
  *         schema:
  *           type: integer
- *         description: ID del producto
+ *         description: ID de la prenda
  *     responses:
  *       200:
- *         description: Producto eliminado
+ *         description: Prenda eliminado
  *       404:
- *         description: Producto no encontrado
+ *         description: Prenda no encontrado
  *       500:
  *         description: Error en el servidor
  */
-productRoutes.delete("/:id", deleteProduct);
+prendaRoutes.delete("/:id", deletePrenda);
 
-export default productRoutes;
+export default prendaRoutes;

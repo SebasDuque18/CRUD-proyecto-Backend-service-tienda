@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import cors from "cors";
 import { AppDataSource } from "./data-source";
-import productRoutes from "./routes/productRoutes";
+import prendaRoutes from "./routes/prendaRoutes";
 import swaggerUI from "swagger-ui-express";
 import swaggerSpec from "./swagger/swagger";
 
@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Rutas
-app.use("/api/products", productRoutes);
+app.use("/api/prenda", prendaRoutes);
 
 // Documentación Swagger
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
